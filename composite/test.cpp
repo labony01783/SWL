@@ -3,13 +3,13 @@
 #include <vector>
 using namespace std;
 
-// Base class
+
 class Employee {
 public:
     virtual void showDetails() = 0;
 };
 
-// Leaf classes
+
 class Developer : public Employee {
     string name;
 public:
@@ -34,7 +34,7 @@ public:
     }
 };
 
-// Composite class
+
 class Manager : public Employee {
     string name;
     vector<Employee*> team;
@@ -55,7 +55,7 @@ public:
     }
 };
 
-// ------------------ Google Test Cases ------------------
+
 
 TEST(CompositePatternTest, SingleLeafTest) {
     Developer dev("Alice");
@@ -87,7 +87,7 @@ TEST(CompositePatternTest, ManagerWithTeam) {
     delete des;
 }
 
-// Main function to run tests
+
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
